@@ -62,9 +62,10 @@ medioTiempo(T1,T2,Tiem1,Tiem2,TiemR):-
 
 %viaje(manizales,pereira,R,T,D,S).
 %viaje(manizales,chinchina,R,T,D,S).
+
 viaje(C1,C2,R,T,D,S):- viajeIda(C1,C2,Tr,Dr),T is Tr,D is Dr,sentido(1,Is),S is Is;
                      viajeRegreso(C1,C2,Tr,Dr),sentido(2,Is),T is Tr,D is Dr,S is Is;
-                     viaje2(C1,C2,R).%%Cuando no hay camino directo
+                     viaje3(C1,C2,R,Tr,Dr),sentido(1,Is),T is Tr,D is Dr,S is Is. %%Cuando no hay camino directo
 
 viajeIda(C1,C2,T,D) :- camino2(C1,C2,_,_),obtenerTiempo(C1,C2,Ti1),Ti11 is Ti1,obtenerTiempo(C1,C2,Ti2),Ti22 is Ti2,
                    (medioTiempo(1,0,(Ti11),(Ti22),TiemR)),T is TiemR,
