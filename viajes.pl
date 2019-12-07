@@ -112,7 +112,7 @@ viaje2(C1,C2,[Int1,Int2]) :-
                      camino2(C2,C1,_,_);
                      viaje2(C1,Int1,[]),viaje2(Int1,C2,Int2).
 
-getFirElem(X,[X|_]).
-getSecElem(X,[_|Y]):- getFirElem(X,Y).
-getThiElem(X,[_|Y]):- getSecElem(X,Y).
-getFouElem(X,[_|Y]):- getThiElem(X,Y).
+getFirElem([X|_],X).
+
+toList([P|[]],[P]).
+toList([P|Y],[P|L]):- toList(A,L),getFirElem(Y,A).
