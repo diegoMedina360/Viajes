@@ -116,5 +116,7 @@ viaje2(C1,C2,[Int1,Int2]) :-
 
 getFirElem([X|_],X).
 
+toList([],[]).
+toList([P|[_,_]],[P]).
 toList([P|[]],[P]).
 toList([P|Y],[P|L]):- toList(A,L),getFirElem(Y,A).
