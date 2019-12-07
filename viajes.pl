@@ -118,3 +118,6 @@ getFirElem([X|_],X).
 
 toList([P|[]],[P]).
 toList([P|Y],[P|L]):- toList(A,L),getFirElem(Y,A).
+
+%%list_vacia([]):- false.
+%%es_lista([_|_]).
