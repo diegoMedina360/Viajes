@@ -120,8 +120,8 @@ viaje3(C1,C2,[],T,D) :- camino2(C1,C2,_,_),viajeIda(C1,C2,Ti,Di),T is Ti,D is Di
 
 viaje3(C1,C2,[Int1,Int2],T,D) :-camino2(C1,C2,_,_),viajeIda(C1,C2,Ti,Di),T is Ti,D is Di;
                    camino2(C2,C1,_,_),viajeRegreso(C1,C2,Ti,Di),T is Ti,D is Di;
-                   viaje3(C1,Int1,[],T1,D1),viaje3(Int1,C2,Int2,T2,D2),T is T1+T2,D is D1+D2;
-                   viaje3(C2,Int1,[],T1,D1),viaje3(Int1,C1,Int2,T2,D2),T is T1+T2,D is D1+D2.                     
+                   camino2(C1,_,_,_),viaje3(C1,Int1,[],T1,D1),viaje3(Int1,C2,Int2,T2,D2),T is T1+T2,D is D1+D2;
+                   camino2(_,C1,_,_),viaje3(C2,Int1,[],T1,D1),viaje3(Int1,C1,Int2,T2,D2),T is T1+T2,D is D1+D2.                     
 
 getFirElem([X|_],X).
 
